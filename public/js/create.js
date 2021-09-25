@@ -2,9 +2,9 @@ var  createBtn = document.getElementById("create")
 
 async function createPost(){
   var note = {
-    name : document.getElementById("name").value,
+    created_by : document.getElementById("name").value,
     title: document.getElementById("notetitle").value,
-    newnote: document.getElementById("notetext").value
+    text: document.getElementById("notetext").value
   }
   console.log(note)
  
