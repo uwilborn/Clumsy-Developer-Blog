@@ -4,7 +4,8 @@ async function createPost(){
   var note = {
     created_by : document.getElementById("name").value,
     title: document.getElementById("notetitle").value,
-    text: document.getElementById("notetext").value
+    text: document.getElementById("notetext").value,
+    date_created: document.getElementById("notedate").value
   }
   console.log(note)
  
