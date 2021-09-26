@@ -15,7 +15,7 @@ Newnote.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    text: {
+    memo: {
       type: DataTypes.STRING,
       allowNull: false,
     },
