@@ -12,9 +12,7 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">The Clumsy Developer Blog! </a>
-      </h1>
+      
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
@@ -47,6 +45,11 @@
   </ul>      
         
         {{/if}}
+        
+        
+        <h1>
+        <a href="/">The Clumsy Developer Blog! </a>
+      </h1>
       </nav>
     </header>
     <main class="container container-fluid mt-5">
