@@ -19,7 +19,7 @@ router.get("/profile",function(req,res){
     let user = {
         id: req.session.user_id,
         name: req.session.user_name,
-        email: req.session.user_email
+        email: req.session.user_username
     }
     res.render("profile", user)
 })
