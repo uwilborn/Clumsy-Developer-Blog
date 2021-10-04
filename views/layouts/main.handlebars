@@ -18,14 +18,34 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-
-        <a href="/">Home</a>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/logout">Logout</a>
+        
+        <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="/">Home</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" href="/dashboard">Dashboard</a>
+  </li> 
+  <li class="nav-item">
+    <a class="nav-link" href="/logout">Logout</a>
+  </li>
+  </ul>       
        |
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        
+        <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="/">Home</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" href="/login">Dashboard</a>
+  </li> 
+  <li class="nav-item">
+    <a class="nav-link" href="/login">Login</a>
+  </li>
+  </ul>      
+        
         {{/if}}
       </nav>
     </header>
@@ -33,6 +53,9 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
+    
+     
+  
     <footer>
       
     </footer>
