@@ -26,8 +26,8 @@ router.get("/profile",function(req,res){
 
 
 router.get("/logout",function(req,res){
-    console.log("contact")
-    res.render("contact")
+    console.log("logout")
+    res.render("logout")
 })
 
 module.exports = router;
