@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS noter_db;
 CREATE DATABASE noter_db;
 
 
@@ -14,7 +15,7 @@ CREATE TABLE newnote (
 
 create Table user (
     id integer Primary key Auto_increment,
-    name varchar(30), 
-    username integer null,
-    password varchar(8)
+    name varchar(30) not null, 
+    username varchar(30) not null,
+    password varchar(100)
     );
