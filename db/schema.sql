@@ -15,7 +15,7 @@ CREATE TABLE newnote (
 
 create Table user (
     id integer Primary key Auto_increment,
-    name varchar(30) not null, 
+    name varchar(30), 
     username varchar(30) not null,
     password varchar(100)
     );
