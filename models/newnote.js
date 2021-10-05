@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Newnote extends Model {}
 
@@ -23,13 +23,14 @@ Newnote.init(
       type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: 'user',
-        key: 'name',
+        model: "user",
+        key: "name",
       },
     },
     date_created: {
       type: DataTypes.DATE,
       allowNull: true,
+      timestamps: true,
     },
   },
   {
@@ -37,7 +38,7 @@ Newnote.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'newnote',
+    modelName: "newnote",
   }
 );
 
