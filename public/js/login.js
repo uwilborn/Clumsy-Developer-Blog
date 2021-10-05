@@ -1,4 +1,4 @@
-console.log("JS file");
+//Define variable for handling form information
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -8,7 +8,7 @@ const loginFormHandler = async (event) => {
 
   if (username && password) {
     // Send a POST request to the API endpoint
-    const response = await fetch("/controllers/api/userRoutes.js", {
+    const response = await fetch("/api/users/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
@@ -17,6 +17,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the homepage page
       document.location.replace("/");
+      console.log("Going to homepage");
     } else {
       alert(response.statusText);
     }
@@ -26,12 +27,15 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
+  //Define variables using ID's from form
+
   const name = document.querySelector("#name-signup").value.trim();
-  const username = document.querySelector("#username-signup").value.trim();
+  const email = document.querySelector("#username-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
   console.log("User", name, username, password);
+
   if (name && username && password) {
-    const response = await fetch("/controllers/api/userRoutes.js", {
+    const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({ name, username, password }),
       headers: { "Content-Type": "application/json" },
@@ -39,7 +43,7 @@ const signupFormHandler = async (event) => {
 
     if (response.ok) {
       console.log("USER created", response);
-      document.location.replace("/");
+      document.location.replace("/login");
     } else {
       alert(response.statusText);
     }

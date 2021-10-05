@@ -2,14 +2,14 @@ var createBtn = document.getElementById("create");
 
 async function createPost() {
   var note = {
-    created_by: document.getElementById("name").value,
-    title: document.getElementById("notetitle").value,
-    memo: document.getElementById("notetext").value,
-    date_created: document.getElementById("notedate").value,
+    created_by: document.getElementById("postedby").value,
+    title: document.getElementById("title").value,
+    memo: document.getElementById("content").value,
+    date_created: document.getElementById("date").value,
   };
   console.log(note);
 
-  const response = await fetch("/views/createpost.handlebars", {
+  const response = await fetch("/api/projects/create", {
     method: "POST",
     body: JSON.stringify(note),
     headers: { "Content-Type": "application/json" },

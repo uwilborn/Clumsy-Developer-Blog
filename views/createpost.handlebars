@@ -1,46 +1,42 @@
 <div class="row">
   <div class="col-md-6">
     <h1>Welcome {{name}}</h1>
-    <h2>Create A Post</h2>
- 
+    <h2>Create A New Post</h2>
+
+
+<div class="row mt-4">
+  <div class="col-md-6">
     
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-4 list-container">
-          <div class="card">
-            <ul class="list-group"></ul>
-          </div>
-        </div>
-          <div class="col-8">
-          <input
-            class="note-title"
-            placeholder="Note Title"
-            maxlength="28"
-            id="notetitle"
-            type="text"
-          />
-          <textarea class="note-textarea" id="notetext" placeholder="Note Text"></textarea>
-        </div>
-      </div>
-    </div>
-
-
+    <form class="form create-form">      
       <div class="form-group">
-        <label for="createdby">Created By:</label>
-        <input class="form-input" type="hidden" id="createdby" value={{id}} placeholder={{name}}/>
+        <label for="title">Post Title:</label>
+        <input class="form-input" type="text" id="title" />
       </div>
       
-       <div class="form-group">
-        <label for="notedate">Date:</label>
-        <input class="form-input" type="hidden" id="notedate" value={{id}} placeholder={{name}}/>
+       <form class="form create-form">      
+      <div class="form-group">
+        <label for="title">Post Content:</label>
+        <input class="form-input" type="text" id="content" />
+      </div>
+
+      <div class="form-group">
+        <label for="postedby">Posted By:</label>
+        <input class="form-input" id="postedby" value={{id}} placeholder={{name}}/>
       </div>
       
       <div class="form-group">
-        <button class="btn btn-primary" id ="create" type="submit">CREATE</button>
+        <label for="postedby">Date:</label>
+        <input class="form-input" type="hidden" id="date" value={{id}} placeholder={{date_created}}/>
+      </div>
+      
+      <div class="form-group">
+        <button class="btn btn-primary" id ="create" type="submit">Create</button>
       </div>
      </form>
      </div>
      </div>
      
+     <a href="/dashboard">Dashboard</a>
+   
      
       <script src="./js/create.js"></script>
