@@ -1,6 +1,7 @@
 var createBtn = document.getElementById("create");
 
-async function createPost() {
+async function createPost(event) {
+  event.preventDefault();
   var note = {
     created_by: document.getElementById("postedby").value,
     title: document.getElementById("title").value,
@@ -8,7 +9,7 @@ async function createPost() {
   };
   console.log(note);
 
-  const response = await fetch("/api/create", {
+  const response = await fetch("/api/notes/create", {
     method: "POST",
     body: JSON.stringify(note),
     headers: { "Content-Type": "application/json" },

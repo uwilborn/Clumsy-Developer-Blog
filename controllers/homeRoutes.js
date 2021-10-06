@@ -1,9 +1,13 @@
 const router = require("express").Router();
+const db = require("../models");
 
-router.get("/", function (req, res) {
+router.get("/", async function (req, res) {
+  const notesData = await db.Newnote.findAll();
+  const notes = JSON.parse(JSON.stringify(notesData));
   console.log("Home");
   res.render("homepage", {
     loggedIn: req.session.loggedIn,
+    notes,
   });
 });
 

@@ -18,17 +18,17 @@ node <server class="js">
         </tr>
       </thead>
       <tbody>
-        {{#each allPosts }}
+        {{#each notes }}
         <tr>
-          <td>{{this.username}}
+          <td>
             <button data-id={{this.id}} >Post</button>
           </td>
           <td>{{this.title}}</td>
           <td>{{this.memo}}</td>
-          <td>{{this.date_created}}</td>
+          
           
         </tr>
-        {{this}}
+        
         {{/each}}
       </tbody>
     </table>
