@@ -23,46 +23,43 @@
     <div class="flex-column justify-space-around">
       <header class="display-flex justify-space-between align-center p-2">
 
-        <nav>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
+        <!-- Conditionally render login or logout links -->
 
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/dashboard">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-              </li>
-            </ul>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/homepage">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        </ul>
 
-          {{else}}
+        {{#if logged_in}}
 
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-              </li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/createpost">New Post</a>
+          </li>
 
-          {{/if}}
+        {{else}}
 
-          <h1>
-            <a href="/">The Clumsy Developer Blog! </a>
-          </h1>
-        </nav>
+        {{/if}}
+
+        <h1>
+          <a href="/">The Clumsy Developer Blog! </a>
+        </h1>
+
       </header>
       <main class="container container-fluid mt-5">
         <!-- Render the sub layout -->
+
         {{{body}}}
+
       </main>
 
       <footer>
