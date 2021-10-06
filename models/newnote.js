@@ -19,18 +19,13 @@ Newnote.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    created_by: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
       references: {
         model: "user",
-        key: "name",
+        key: "id",
       },
-    },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: true,
-      timestamps: true,
     },
   },
   {

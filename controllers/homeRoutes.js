@@ -2,26 +2,26 @@ const router = require("express").Router();
 
 router.get("/", function (req, res) {
   console.log("Home");
-  res.render("main");
+  res.render("homepage", {
+    loggedIn: req.session.loggedIn,
+  });
 });
 
-router.get("/homepage", function (req, res) {
-  console.log("Home Page");
-  res.render("homepage");
-});
-
-router.get("/dashboard", function (req, res) {
-  console.log("dashboard");
-  res.render("dashboard");
+router.get("/createpost", function (req, res) {
+  console.log("createpost");
+  res.render("createpost", {
+    loggedIn: req.session.loggedIn,
+    id: req.session.user_id,
+  });
 });
 router.get("/login", function (req, res) {
   console.log("login");
-  res.render("login");
+  res.render("login", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/logout", function (req, res) {
   console.log("logout");
-  res.render("logout");
+  res.render("logout", { loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;

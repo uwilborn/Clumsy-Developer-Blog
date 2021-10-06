@@ -4,9 +4,7 @@ const { Newnote } = require("../../models");
 router.post("/create", async (req, res) => {
   console.log("Post note", req.body);
   try {
-    const newPost = await Newnote.create({
-      ...req.body,
-    });
+    const newPost = await Newnote.create(req.body);
     console.log("Create note", newPost);
     res.status(200).json(newPost);
   } catch (err) {
@@ -14,6 +12,7 @@ router.post("/create", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 router.get("/allposts", async (req, res) => {
   console.log("Get all posts", req.body);
   try {

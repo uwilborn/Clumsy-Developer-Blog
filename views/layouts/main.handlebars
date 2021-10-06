@@ -30,17 +30,20 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/homepage">Dashboard</a>
+            <a class="nav-link" href="/">Dashboard</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
-          </li>
+          {{#unless loggedIn}}
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+          {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          {{/unless}}
         </ul>
 
-        {{#if logged_in}}
+        {{#if loggedIn}}
 
           <li class="nav-item">
             <a class="nav-link" href="/createpost">New Post</a>
@@ -68,7 +71,7 @@
     </div>
 
     <!-- Render script for logged in users only -->
-    {{#if logged_in}}
+    {{#if loggedIn}}
       <script src="/js/logout.js"></script>
     {{/if}}
   </body>
