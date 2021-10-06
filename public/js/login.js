@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the homepage page
-      document.location.replace("/");
+      document.location.replace("/homepage");
       console.log("Going to homepage");
     } else {
       alert(response.statusText);
@@ -35,7 +35,7 @@ const signupFormHandler = async (event) => {
   console.log("User", name, username);
 
   if (name && username && password) {
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/users1", {
       method: "POST",
       body: JSON.stringify({ name, username, password }),
       headers: { "Content-Type": "application/json" },

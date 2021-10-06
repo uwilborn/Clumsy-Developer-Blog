@@ -9,7 +9,7 @@ async function createPost() {
   };
   console.log(note);
 
-  const response = await fetch("/api/projects/create", {
+  const response = await fetch("/api/create", {
     method: "POST",
     body: JSON.stringify(note),
     headers: { "Content-Type": "application/json" },
